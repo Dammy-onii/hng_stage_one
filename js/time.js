@@ -13,7 +13,9 @@ function displayDateTime() {
       const hours = currentDate.getHours();
       const minutes = currentDate.getMinutes();
       const seconds = currentDate.getSeconds();
-      const timeString = `${hours}:${minutes}:${seconds}`;
+      const milliseconds = currentDate.getMilliseconds();
+
+      const timeString = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 
       // Display day and time separately
       displayDay.innerHTML = dayOfWeek;
@@ -21,7 +23,7 @@ function displayDateTime() {
     }
 
     // Update the date and time every second (1000 milliseconds)
-    setInterval(updateDateTime, 1000);
+    setInterval(updateDateTime, 100);
 
     // Initial update
     updateDateTime();
